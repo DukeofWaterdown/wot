@@ -1,0 +1,27 @@
+
+  <!DOCTYPE html>
+        <html>
+          <head>
+            <title> WOT</title>
+            <link rel='stylesheet' href='/stylesheets/style.css' />
+          </head>
+          <body>
+            <h1>Welcome to WOT - Who Owns That?</h1>
+            <p>Below you will find the master list.</p>
+          <br>
+            <h1> The Master List: </h1>
+            <ul>
+              <%
+                var list = '';
+                for (i = 0; i < ownerlist.length; i++) {
+                  var wholesome = (ownerlist[i].final == "yes") ? "wholly" : "kinda sorta";
+                  list += '<li> <p> ' + ownerlist[i].companyname + ' is ' + wholesome + ' owned by ' + ownerlist[i].ownername + '</p> </li>';
+                }
+              %>
+              <%- list %>
+            </ul>
+          </body>
+        </html>
+
+        <!---  the little 'THIS GUYS' go around the HTML tags because technically the list array is composed of strings that
+        are being translated into HTML code

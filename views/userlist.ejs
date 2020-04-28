@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>User List</h1>
+    <ul>
+      <%
+        var list = '';
+        for (i = 0; i < userlist.length; i++) {
+          list += '<li> <p> ' + userlist[i].companyname + ' is owned by ' + userlist[i].ownername + ' and is this final? ' + userlist[i].final + '</p> </li>';
+        }
+      %>
+      <%- list %>
+    </ul>
+  </body>
+</html>
+
+
+        <!---  the little 'THIS GUYS' go around the HTML tags because technically the list array is composed of strings that
+        are being translated into HTML code
+
+        list += '<li> <p> Hello ' + userlist[i].companyname + '</p> </li>';
+        list += '<li> <p> ' + userlist[i].companyname + ' is owned by ' + userlist[i].ownername + ' and is this final? ' + userlist[i].final + '</p> </li>';
